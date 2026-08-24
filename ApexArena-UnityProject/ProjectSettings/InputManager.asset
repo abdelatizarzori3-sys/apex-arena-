@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!13 &1
+InputManager:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Axes: []
+  m_Buttons:
+  - serializedVersion: 3
+    m_Name: Fire
+    m_PositiveButton: mouse 0
+    m_AltPositiveButton: 
+    m_NegativeButton: 
+    m_AltNegativeButton: 
+    m_Gravity: 1000
+    m_Dead: 0.001
+    m_Sensitivity: 1000
+    m_Snap: 0
+    m_Invert: 0
+    m_Type: 0
+    m_Axis: 0
+    m_JoyNum: 0
+  - serializedVersion: 3
+    m_Name: Reload
+    m_PositiveButton: r
+    m_AltPositiveButton: 
+    m_NegativeButton: 
+    m_AltNegativeButton: 
+    m_Gravity: 1000
+    m_Dead: 0.001
+    m_Sensitivity: 1000
+    m_Snap: 0
+    m_Invert: 0
+    m_Type: 0
+    m_Axis: 0
+    m_JoyNum: 0
+  - serializedVersion: 3
+    m_Name: Jump
+    m_PositiveButton: space
+    m_AltPositiveButton: 
+    m_NegativeButton: 
+    m_AltNegativeButton: 
+    m_Gravity: 1000
+    m_Dead: 0.001
+    m_Sensitivity: 1000
+    m_Snap: 0
+    m_Invert: 0
+    m_Type: 0
+    m_Axis: 0
+    m_JoyNum: 0
+  - serializedVersion: 3
+    m_Name: Interact
+    m_PositiveButton: f
+    m_AltPositiveButton: 
+    m_NegativeButton: 
+    m_AltNegativeButton: 
+    m_Gravity: 1000
+    m_Dead: 0.001
+    m_Sensitivity: 1000
+    m_Snap: 0
+    m_Invert: 0
+    m_Type: 0
+    m_Axis: 0
+    m_JoyNum: 0
+  - serializedVersion: 3
+    m_Name: Tech
+    m_PositiveButton: q
+    m_AltPositiveButton: 
+    m_NegativeButton: 
+    m_AltNegativeButton: 
+    m_Gravity: 1000
+    m_Dead: 0.001
+    m_Sensitivity: 1000
+    m_Snap: 0
+    m_Invert: 0
+    m_Type: 0
+    m_Axis: 0
+    m_JoyNum: 0
+  - serializedVersion: 3
+    m_Name: Run
+    m_PositiveButton: left shift
+    m_AltPositiveButton: 
+    m_NegativeButton: 
+    m_AltNegativeButton: 
+    m_Gravity: 1000
+    m_Dead: 0.001
+    m_Sensitivity: 1000
+    m_Snap: 0
+    m_Invert: 0
+    m_Type: 0
+    m_Axis: 0
+    m_JoyNum: 0
