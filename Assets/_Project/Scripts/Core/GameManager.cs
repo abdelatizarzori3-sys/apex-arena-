@@ -26,9 +26,9 @@ namespace ApexArena.Core
         public int AlivePlayers { get; private set; }
         public int CurrentPlayerCount { get; private set; }
 
-        public event Action<MatchState> OnMatchStateChanged;
-        public event Action<float> OnMatchTimeUpdated;
-        public event Action OnZoneMutation;
+        public event System.Action<MatchState> OnMatchStateChanged;
+        public event System.Action<float> OnMatchTimeUpdated;
+        public event System.Action OnZoneMutation;
 
         private List<PlayerController> activePlayers = new List<PlayerController>();
         private float nextMutationTime;
