@@ -1,0 +1,8 @@
+m_ObjectHideFlags: 0
+serializedVersion: 2
+m_Scenes:
+- enabled: 1
+  path: Assets/_Project/Scenes/MainArena.unity
+  guid: 990db0a70c4047fb92c33c00da81e4c5
+m_configObjects: {}
+

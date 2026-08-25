@@ -47,6 +47,7 @@ namespace ApexArena.Core
         private void Start()
         {
             InitializeMatch();
+            StartMatch();
         }
 
         private void Update()
@@ -64,7 +65,7 @@ namespace ApexArena.Core
             }
 
             // التحقق من انتهاء المباراة
-            if (ElapsedTime >= matchDuration || AlivePlayers <= 1)
+            if (ElapsedTime >= matchDuration || (CurrentPlayerCount > 1 && AlivePlayers <= 1))
             {
                 EndMatch();
             }

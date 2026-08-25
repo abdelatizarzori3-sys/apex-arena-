@@ -76,9 +76,19 @@ namespace ApexArena.Gameplay
             moveInput = value.Get<Vector2>();
         }
 
+        public void SetMoveInput(Vector2 input)
+        {
+            moveInput = input;
+        }
+
         public void OnRun(InputValue value)
         {
             isRunning = value.isPressed;
+        }
+
+        public void SetRunInput(bool running)
+        {
+            isRunning = running;
         }
 
         public void OnJump()

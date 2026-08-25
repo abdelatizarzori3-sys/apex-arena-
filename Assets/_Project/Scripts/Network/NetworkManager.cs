@@ -1,4 +1,5 @@
 using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using System;
 
@@ -61,7 +62,7 @@ namespace ApexArena.Network
         {
             if (netManager == null) return;
 
-            var transport = netManager.GetComponent<Unity.Netcode.Transports.UNET.UNetTransport>();
+            var transport = netManager.GetComponent<UnityTransport>();
             if (transport != null)
             {
                 transport.ConnectAddress = serverAddress;
