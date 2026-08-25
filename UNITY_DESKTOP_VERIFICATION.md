@@ -32,7 +32,9 @@ Open **File → Build Settings**. The only enabled scene must be `Assets/_Projec
 
 ## 4. Cloud Build configuration
 
-In Unity Cloud on the computer, open **Apex Arena → Build Automation → Configurations**. Create an Android configuration using repository `abdelatizarzori3-sys/apex-arena-`, branch `main`, and Unity `2022.3.20f1`. Review the displayed organization plan, credits, and build cost before triggering the first job. Run it as a private verification build, download the APK, and install it on a test Android device before any store submission.
+In Unity Cloud on the computer, open **Apex Arena → Build Automation**. In the Build settings source-control area, connect GitHub and authorize access to `abdelatizarzori3-sys/apex-arena-`; select branch `main`. Then open **Configurations**, select **New configuration**, choose **Android**, and set Unity to `2022.3.20f1`. Confirm that the target uses the build settings scene `Assets/_Project/Scenes/MainArena.unity`.
+
+Review the displayed organization plan, credits, and build cost before triggering the first job. Run it as a private verification build, download the APK, and install it on a test Android device before any store submission.
 
 ## 5. Evidence to retain
 
