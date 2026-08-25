@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
+using ApexArena.Gameplay;
 
 namespace ApexArena.AI
 {
