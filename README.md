@@ -148,6 +148,8 @@ cd apex-arena-future-forge
 
 ## 📚 الوثائق
 
+للاطلاع على الوثائق التفصيلية، بما في ذلك طريقة إعداد الرخصة وبناء APK دون فتح محرر Unity، راجع [دليل رخصة Unity والبناء الآلي](UNITY_LICENSE_SETUP.md).
+
 للاطلاع على الوثائق التفصيلية:
 - [Game Design Document](../docs/Apex_Arena_GDD_v1.0.md)
 - [Art Bible](../docs/Apex_Arena_Art_Bible_v1.0.md)
