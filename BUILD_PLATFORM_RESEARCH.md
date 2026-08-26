@@ -25,3 +25,13 @@
 ## القرار
 
 سنستخدم GitHub Actions + GameCI كبديل أول، مع تشغيل يدوي فقط، وتثبيت Unity 2022.3.20f1، واستعمال `game-ci/unity-builder`, ثم رفع مجلد APK كـ artifact. إذا لم تتوفر رخصة Unity الصالحة، لن ينتج أي بديل APK حقيقيًا، ويجب توثيق ذلك بدل ادعاء النجاح.
+
+## نتيجة التشغيل الفعلي
+
+تشغيل GitHub Actions رقم `32978547183` نجح في إعداد المهمة وCheckout وCache، ثم فشل في خطوة `Build Android APK` قبل إنشاء APK. السجل الرسمي كان:
+
+`No valid license activation strategy could be determined. Make sure to provide UNITY_EMAIL, UNITY_PASSWORD, and either a UNITY_SERIAL or UNITY_LICENSE.`
+
+إذن البديل يعمل، لكن أسرار ترخيص Unity ليست متاحة في بيئة Actions أو لا تحتوي على استراتيجية تفعيل صالحة. وفق GameCI يجب توفير `UNITY_LICENSE` أو `UNITY_SERIAL` مع `UNITY_EMAIL` و`UNITY_PASSWORD`، أو استخدام Unity Licensing Server. لا توجد طريقة آمنة لاستخراج هذه القيم من GitHub أو اختلاقها.
+
+مرجع التفعيل: https://game.ci/docs/github/activation
