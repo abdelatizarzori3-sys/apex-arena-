@@ -43,7 +43,8 @@ ApexArena-UnityProject/
 │       │   │   ├── WeaponSystem.cs
 │       │   │   ├── AllianceSystem.cs
 │       │   │   ├── ResourceManager.cs
-│       │   │   └── ResourceNode.cs
+│       │   │   ├── ResourceNode.cs
+│       │   │   └── ArenaMobileInput.cs
 │       │   ├── AI/
 │       │   │   └── AIController.cs
 │       │   ├── UI/
@@ -148,7 +149,7 @@ cd apex-arena-future-forge
 
 ## 📚 الوثائق
 
-للاطلاع على الوثائق التفصيلية، بما في ذلك طريقة إعداد الرخصة وبناء APK دون فتح محرر Unity، راجع [دليل رخصة Unity والبناء الآلي](UNITY_LICENSE_SETUP.md).
+للاطلاع على الوثائق التفصيلية، راجع [دليل رخصة Unity والبناء الآلي](UNITY_LICENSE_SETUP.md) و[وثيقة الخوادم والشبكة](SERVER_ARCHITECTURE.md).
 
 للاطلاع على الوثائق التفصيلية:
 - [Game Design Document](../docs/Apex_Arena_GDD_v1.0.md)

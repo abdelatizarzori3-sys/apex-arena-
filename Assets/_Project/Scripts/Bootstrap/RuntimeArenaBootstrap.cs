@@ -73,6 +73,7 @@ namespace ApexArena.Bootstrap
             var controller = player.AddComponent<PlayerController>();
             controller.PlayerName = "Operative";
             player.AddComponent<ArenaKeyboardInput>();
+            player.AddComponent<ArenaMobileInput>();
             SetColor(player, new Color(0.95f, 0.38f, 0.18f));
         }
 
