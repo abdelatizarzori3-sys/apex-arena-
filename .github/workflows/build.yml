@@ -23,6 +23,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          projectPath: .
           targetPlatform: StandaloneWindows64
 
       - name: Upload Build
@@ -47,6 +48,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          projectPath: .
           targetPlatform: Android
           buildMethod: BuildPipeline.BuildAndroid
           androidExportType: androidPackage

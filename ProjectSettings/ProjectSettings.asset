@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  serializedVersion: 26
+  productGUID: 00000000000000000000000000000000
+  AndroidProfiler: 0
+  AndroidFilterTouchesWhenObscured: 0
+  AndroidEnableSustainedPerformanceMode: 0
+  defaultScreenOrientation: 4
+  targetDevice: 2
+  useOnDemandResources: 0
+  accelerometerFrequency: 60
+  companyName: Apex Arena Studios
+  productName: Apex Arena: Future Forge
+  defaultCursor: {fileID: 0}
+  cursorHotspot: {x: 0, y: 0}
+  m_SplashScreenBackgroundColor: {r: 0.03137255, g: 0.06666667, b: 0.10196079, a: 1}
+  m_ShowUnitySplashScreen: 1
+  m_ShowUnitySplashLogo: 1
+  m_SplashScreenOverlayOpacity: 1
+  m_SplashScreenAnimation: 1
+  m_SplashScreenLogoStyle: 1
+  m_SplashScreenDrawMode: 0
+  m_SplashScreenBackgroundAnimationZoom: 1
+  m_SplashScreenLogoAnimationZoom: 1
+  m_SplashScreenBackgroundLandscapeAspect: 1
+  m_SplashScreenBackgroundPortraitAspect: 1
+  m_SplashScreenBackgroundLandscapeUvs: {serializedVersion: 2, x: 0, y: 0, width: 1, height: 1}
+  m_SplashScreenBackgroundPortraitUvs: {serializedVersion: 2, x: 0, y: 0, width: 1, height: 1}
+  m_SplashScreenLogos: []
+  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_HolographicTrackingLossScreen: {fileID: 0}
+  defaultScreenWidth: 1920
+  defaultScreenHeight: 1080
+  defaultScreenWidthWeb: 960
+  defaultScreenHeightWeb: 600
+  m_StereoRenderingPath: 0
+  m_ActiveColorSpace: 0
+  unsupportedMSAAFallback: 0
+  m_SpriteBatchVertexThreshold: 300
+  m_MTRendering: 1
+  mipStripping: 0
+  numberOfMipsStripped: 0
+  numberOfMipsStrippedPerMipmapLimitGroup: {}
+  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  iosShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: -1
+  androidStartInFullscreen: 1
+  androidRenderOutsideSafeArea: 1
+  androidUseSwappy: 1
+  androidBlitType: 0
+  androidResizableWindow: 0
+  androidDefaultWindowWidth: 1920
+  androidDefaultWindowHeight: 1080
+  androidMinimumWindowWidth: 400
+  androidMinimumWindowHeight: 300
+  androidFullscreenMode: 1
+  androidAutoRotationBehavior: 1
+  androidRequireARCore: 0
+  androidMinifyRelease: 0
+  androidMinifyDebug: 0
+  androidValidateAppBundleSize: 1
+  androidAppBundleSizeToValidate: 150
+  androidTargetArchitectures: 1
+  androidTargetDevices: 0
+  androidSplashScreen: {fileID: 0}
+  androidKeystoreName: 
+  androidKeyaliasName: 
+  androidEnableArmv9SecurityFeatures: 0
+  androidBuildApkPerCpuArchitecture: 0
+  androidTVCompatibility: 0
+  androidIsGame: 1
+  androidEnableBanner: 1
+  androidBanner: {fileID: 0}
+  androidMinSdkVersion: 22
+  androidTargetSdkVersion: 0
+  androidPreferredInstallLocation: 1
+  androidGamepadSupportLevel: 0
+  chromeosInput: 0
+  androidSupportedAspectRatio: 1
+  androidMaxAspectRatio: 2.1
+  applicationIdentifier:
+    Standalone: com.abdelatizarzori3.apexarena
+    Android: com.abdelatizarzori3.apexarena
+  bundleVersion: 0.1.0
+  metroPackageVersion: 1.0.0
+  metroPackageName: ApexArena
+  XboxOneDescription: Apex Arena: Future Forge
+  XboxOnePackageName: ApexArena
+  XboxOneTitleId: 0
+  XboxOneSC_TitleId: 0
+  XboxOneContentId: 0
+  XboxOneUpdateKey: 0000000000000000000000000000000000000000000000000000000000000000
+  XboxOneDescription: Apex Arena: Future Forge
+  switchNMETAOverride: 
+  switchNPDMOverride: 
+  switchNetLibKey: 
+  switchSocketMemoryPoolSize: 6144
+  switchSocketAllocatorPoolSize: 256
+  switchSocketConcurrency: 14
+  switchSocketConfig: 0
+  switchNVNShaderPoolsGranularity: 33554432
+  switchNVNDefaultPoolsGranularity: 16777216
+  switchNVNOtherPoolsGranularity: 16777216
+  switchNVNMaxPublicTextureIDCount: 0
+  switchNVNMaxPublicSamplerIDCount: 0
+  switchNVNGraphicsFirmwareMemory: 32
+  switchMaxWorkerMultiple: 8
+  stadiaPresentMode: 0
+  stadiaTargetFramerate: 0
+  vulkanNumSwapchainBuffers: 3
+  vulkanEnableSetSRGBWrite: 0
+  vulkanEnablePreTransform: 0
+  vulkanEnableLateAcquireNextImage: 0
+  vulkanEnableCommandBufferRecycling: 1
+  loadStoreDebugModeEnabled: 0
+  bundleVersionCode: 1
+  preloadedAssets: []
+  metroInputSource: 0
+  wsaTransparentSwapchain: 0
+  m_HolographicPauseOnTrackingLoss: 1
+  xboxOneDisableKinectGpuReservation: 1
+  xboxOneEnable7thCore: 1
+  vrSettings:
+    enable360StereoCapture: 0
+  isWsaHolographicRemotingEnabled: 0
+  enableFrameTimingStats: 0
+  enableOpenGLProfilerGPURecorders: 1
+  allowHDRDisplaySupport: 0
+  useHDRDisplay: 0
+  hdrBitDepth: 0
+  m_ColorGamuts: 00000000
+  targetPixelDensity: 30
+  resolutionScalingMode: 0
+  resetResolutionOnWindowResize: 0
+  androidSupportedAspectRatio: 1
+  androidMaxAspectRatio: 2.1
+  applicationIdentifier:
+    Standalone: com.abdelatizarzori3.apexarena
+    Android: com.abdelatizarzori3.apexarena
+  buildNumber:
+    Standalone: 0
+    VisionOS: 0
+    iPhone: 0
+    tvOS: 0
+    Android: 1
+  metroPackageVersion: 1.0.0
+  webGLInitialMemorySize: 32
+  webGLMaximumMemorySize: 2048
+  webGLMemoryGrowthMode: 2
+  webGLMemoryLinearGrowthStep: 16
+  webGLMemoryGeometricGrowthStep: 0.2
+  webGLMemoryGeometricGrowthCap: 96
+  webGLPowerPreference: 2
+  scriptingDefineSymbols: {}
+  additionalCompilerArguments:
+    Standalone: []
+    Android: []
+  platformArchitecture: {}
+  scriptingBackend:
+    Standalone: 1
+    Android: 1
+  il2cppCompilerConfiguration: {}
+  il2cppCodeGeneration: {}
+  managedStrippingLevel:
+    EmbeddedLinux: 1
+    GameCoreScarlett: 1
+    GameCoreXboxOne: 1
+    Nintendo Switch: 1
+    PS4: 1
+    PS5: 1
+    QNX: 1
+    Stadia: 1
+    Standalone: 4
+    VisionOS: 1
+    WebGL: 1
+    Windows Store Apps: 1
+    XboxOne: 1
+    Android: 1
+  incrementalIl2cppBuild: {}
+  suppressCommonWarnings: 1
+  allowUnsafeCode: 0
+  useDeterministicCompilation: 1
+  additionalIl2CppArgs: 
+  scriptingRuntimeVersion: 1
+  gcIncremental: 1
+  gcWBarrierValidation: 0
+  apiCompatibilityLevelPerPlatform: {}
+  m_RenderingPath: 1
+  mobileMTRendering: 1
+  metroPackageLogo: {fileID: 0}
+  metroPackageIcon: {fileID: 0}
+  metroPackageSmallTile: {fileID: 0}
+  metroPackageDefaultTile: {fileID: 0}
+  metroPackageSplashScreen: {fileID: 0}
+  xboxOneSplashScreen: {fileID: 0}
+  xboxOneGameOsOverridePath: 
+  xboxOneSpaDllPath: 
+  xboxOneLangId: 1033
+  xboxOneOverrideIdentityName: 
+  xboxOneOverrideDescription: 
+  xboxOneOverrideDisplayName: 
+  xboxOneOverridePublisher: 
+  xboxOneOverrideTitleId: 0
+  xboxOneSmallIcon: {fileID: 0}
+  xboxOneMedIcon: {fileID: 0}
+  xboxOneLargeIcon: {fileID: 0}
+  xboxOneSplashScreen: {fileID: 0}
+  xboxOneGameOsOverridePath: 
+  xboxOneSpaDllPath: 
+  xboxOneAdditionalTitleMemory: 0
+  xboxOneAdditionalFileSystemMemory: 0
+  xboxOneEnableTypeOptimization: 0
+  xboxOnePresentImmediateThreshold: 0
+  xboxOneDisableEsram: 0
+  xboxOneEnableTypeOptimization: 0
+  xboxOneEnableAvatar: 0
+  xboxOneEnableKinect: 0
+  xboxOneEnableKinectAutoTracking: 0
+  xboxOneEnableFitness: 0
+  xboxOneEnableHeadless: 0
+  switchMaxWorkerMultiple: 8
+  stadiaPresentMode: 0
+  stadiaTargetFramerate: 0
+  scriptingRuntimeVersion: 1
+  scriptingBackend:
+    Standalone: 1
+    Android: 1
+  il2cppCompilerConfiguration: {}
+  il2cppCodeGeneration: {}
+  managedStrippingLevel: {}
+  incrementalIl2cppBuild: {}
+  suppressCommonWarnings: 1
+  allowUnsafeCode: 0
+  useDeterministicCompilation: 1
+  additionalIl2CppArgs: 
+  scriptingDefineSymbols: {}
+  additionalCompilerArguments: {}
+  platformArchitecture: {}
+  scriptingBackend: {}
+  il2cppCompilerConfiguration: {}
+  il2cppCodeGeneration: {}
+  managedStrippingLevel: {}
+  incrementalIl2cppBuild: {}
