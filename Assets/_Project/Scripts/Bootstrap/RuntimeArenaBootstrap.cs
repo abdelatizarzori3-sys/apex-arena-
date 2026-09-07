@@ -70,6 +70,8 @@ namespace ApexArena.Bootstrap
             Object.Destroy(player.GetComponent<Collider>());
             player.AddComponent<CharacterController>();
             player.AddComponent<ResourceManager>();
+            player.AddComponent<WeaponSystem>();
+            player.AddComponent<TechSystem>();
             var controller = player.AddComponent<PlayerController>();
             controller.PlayerName = "Operative";
             player.AddComponent<ArenaKeyboardInput>();
