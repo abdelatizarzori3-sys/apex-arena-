@@ -52,6 +52,13 @@ namespace ApexArena.Gameplay
             characterController = GetComponent<CharacterController>();
             resourceManager = GetComponent<ResourceManager>();
 
+            // Keep Inspector assignments intact, but automatically reconnect
+            // gameplay components when the player is created at runtime.
+            if (weaponSystem == null)
+                weaponSystem = GetComponent<WeaponSystem>();
+            if (techSystem == null)
+                techSystem = GetComponent<TechSystem>();
+
             if (cameraTransform == null)
                 cameraTransform = Camera.main?.transform;
         }
