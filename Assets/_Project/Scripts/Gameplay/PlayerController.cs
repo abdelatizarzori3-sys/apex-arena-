@@ -11,7 +11,7 @@ namespace ApexArena.Gameplay
     /// </summary>
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(ResourceManager))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IDamageable
     {
         [Header("Identity")]
         public string PlayerName = "Operative";
@@ -119,7 +119,6 @@ namespace ApexArena.Gameplay
 
         public void OnInteract()
         {
-            // جمع الموارد، فتح الأبواب، إلخ
             TryCollectResource();
         }
 
@@ -127,10 +126,9 @@ namespace ApexArena.Gameplay
         {
             if (!isAlive) return;
 
-            // تطبيق الدروع التكيفية إذا كانت مفعلة
             if (techSystem?.IsTechActive(TechType.AdaptiveArmor) == true)
             {
-                damage = Mathf.RoundToInt(damage * 0.6f); // 40% تخفيض
+                damage = Mathf.RoundToInt(damage * 0.6f);
             }
 
             currentHealth -= damage;
@@ -155,10 +153,7 @@ namespace ApexArena.Gameplay
             currentHealth = 0;
             OnPlayerDeath?.Invoke();
             GameManager.Instance?.OnPlayerDeath(this);
-
-            // تأثيرات الموت
             PlayDeathVFX();
-
             Debug.Log($"[PlayerController] {PlayerName} has died.");
         }
 
@@ -167,11 +162,13 @@ namespace ApexArena.Gameplay
             float speed = isRunning ? runSpeed : walkSpeed;
             Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
 
-            // تحويل الحركة حسب اتجاه الكاميرا
-            move = cameraTransform.TransformDirection(move);
+            if (cameraTransform != null)
+            {
+                move = cameraTransform.TransformDirection(move);
+            }
+
             move.y = 0;
             move.Normalize();
-
             characterController.Move(move * speed * Time.deltaTime);
         }
 
@@ -190,7 +187,7 @@ namespace ApexArena.Gameplay
 
         private void HandleRotation()
         {
-            if (moveInput.sqrMagnitude > 0.01f)
+            if (moveInput.sqrMagnitude > 0.01f && cameraTransform != null)
             {
                 Vector3 lookDirection = new Vector3(moveInput.x, 0, moveInput.y);
                 lookDirection = cameraTransform.TransformDirection(lookDirection);
@@ -218,15 +215,8 @@ namespace ApexArena.Gameplay
             }
         }
 
-        private void PlayJumpVFX()
-        {
-            // TODO: Particle effect
-        }
-
-        private void PlayDeathVFX()
-        {
-            // TODO: Death particle + sound
-        }
+        private void PlayJumpVFX() { }
+        private void PlayDeathVFX() { }
 
         private void OnDestroy()
         {
