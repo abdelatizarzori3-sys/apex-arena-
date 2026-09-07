@@ -20,6 +20,8 @@ namespace ApexArena.Gameplay
 
         private Dictionary<TechType, TechData> techMap = new Dictionary<TechType, TechData>();
         private Dictionary<TechType, float> techCooldowns = new Dictionary<TechType, float>();
+        private Coroutine nanobotRepairCoroutine;
+        private float activeTechElapsed;
 
         public event System.Action<TechData> OnTechUnlocked;
         public event System.Action<TechData> OnTechActivated;
@@ -44,6 +46,7 @@ namespace ApexArena.Gameplay
             techMap.Clear();
             foreach (var tech in availableTechs)
             {
+                if (tech == null) continue;
                 techMap[tech.TechType] = tech;
                 techCooldowns[tech.TechType] = 0f;
             }
@@ -61,7 +64,7 @@ namespace ApexArena.Gameplay
             if (!CheckPrerequisites(tech)) return false;
 
             // التحقق من التكلفة
-            if (!resourceManager.SpendResources(tech.CostEnergy, tech.CostData, tech.CostMaterials)) 
+            if (resourceManager == null || !resourceManager.SpendResources(tech.CostEnergy, tech.CostData, tech.CostMaterials))
                 return false;
 
             unlockedTechs.Add(tech);
@@ -87,7 +90,8 @@ namespace ApexArena.Gameplay
             }
 
             activeTech = tech;
-            techCooldowns[techType] = tech.Cooldown;
+            activeTechElapsed = 0f;
+            techCooldowns[techType] = Mathf.Max(0f, tech.Cooldown);
 
             ApplyTechEffects(tech);
             OnTechActivated?.Invoke(tech);
@@ -108,11 +112,13 @@ namespace ApexArena.Gameplay
         {
             if (activeTech == null) return;
 
-            RemoveTechEffects(activeTech);
-            OnTechDeactivated?.Invoke(activeTech);
+            var techToDeactivate = activeTech;
+            RemoveTechEffects(techToDeactivate);
+            OnTechDeactivated?.Invoke(techToDeactivate);
 
-            Debug.Log($"[TechSystem] Deactivated: {activeTech.TechName}");
+            Debug.Log($"[TechSystem] Deactivated: {techToDeactivate.TechName}");
             activeTech = null;
+            activeTechElapsed = 0f;
         }
 
         public bool IsTechActive(TechType techType)
@@ -127,6 +133,8 @@ namespace ApexArena.Gameplay
 
         private bool CheckPrerequisites(TechData tech)
         {
+            if (tech.Prerequisites == null) return true;
+
             foreach (var prereq in tech.Prerequisites)
             {
                 if (!IsTechUnlocked(prereq)) return false;
@@ -142,7 +150,11 @@ namespace ApexArena.Gameplay
                     // تطبيق في PlayerController.TakeDamage
                     break;
                 case TechType.Nanobots:
-                    StartCoroutine(NanobotRepair());
+                    if (nanobotRepairCoroutine != null)
+                    {
+                        StopCoroutine(nanobotRepairCoroutine);
+                    }
+                    nanobotRepairCoroutine = StartCoroutine(NanobotRepair());
                     break;
                 case TechType.QuantumLeap:
                     // تفعيل القفزة
@@ -161,7 +173,11 @@ namespace ApexArena.Gameplay
             switch (tech.TechType)
             {
                 case TechType.Nanobots:
-                    StopCoroutine(NanobotRepair());
+                    if (nanobotRepairCoroutine != null)
+                    {
+                        StopCoroutine(nanobotRepairCoroutine);
+                        nanobotRepairCoroutine = null;
+                    }
                     break;
                 case TechType.Hologram:
                     DestroyHologram();
@@ -171,11 +187,16 @@ namespace ApexArena.Gameplay
 
         private System.Collections.IEnumerator NanobotRepair()
         {
-            while (activeTech?.TechType == TechType.Nanobots)
+            while (activeTech != null && activeTech.TechType == TechType.Nanobots)
             {
                 yield return new WaitForSeconds(1f);
-                player?.Heal(5);
+                if (activeTech != null && activeTech.TechType == TechType.Nanobots)
+                {
+                    player?.Heal(5);
+                }
             }
+
+            nanobotRepairCoroutine = null;
         }
 
         private void SpawnHologram()
@@ -196,16 +217,19 @@ namespace ApexArena.Gameplay
             {
                 if (techCooldowns[key] > 0)
                 {
-                    techCooldowns[key] -= Time.deltaTime;
+                    techCooldowns[key] = Mathf.Max(0f, techCooldowns[key] - Time.deltaTime);
                 }
             }
         }
 
         private void UpdateActiveTech()
         {
-            if (activeTech != null && activeTech.Duration > 0)
+            if (activeTech == null || activeTech.Duration <= 0f) return;
+
+            activeTechElapsed += Time.deltaTime;
+            if (activeTechElapsed >= activeTech.Duration)
             {
-                // TODO: Check duration and deactivate
+                DeactivateCurrentTech();
             }
         }
     }

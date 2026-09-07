@@ -27,6 +27,7 @@ namespace ApexArena.Gameplay
         [SerializeField] private float terrainChangeSpeed = 2f;
 
         private float lastMutationTime;
+        private float radiationDamageAccumulator;
         private Dictionary<ZoneType, Zone> zoneMap = new Dictionary<ZoneType, Zone>();
 
         public event System.Action<Zone, ZoneMutation> OnZoneMutated;
@@ -58,6 +59,7 @@ namespace ApexArena.Gameplay
             zoneMap.Clear();
             foreach (var zone in zones)
             {
+                if (zone == null) continue;
                 zoneMap[zone.ZoneType] = zone;
                 zone.Initialize();
             }
@@ -69,9 +71,12 @@ namespace ApexArena.Gameplay
         public void MutateZones()
         {
             if (Time.time - lastMutationTime < mutationCooldown) return;
+            if (zones == null || zones.Count == 0) return;
 
             // اختيار منطقة عشوائية للتحول
             Zone targetZone = zones[Random.Range(0, zones.Count)];
+            if (targetZone == null) return;
+
             ZoneMutation mutation = GenerateMutation(targetZone);
 
             ApplyMutation(targetZone, mutation);
@@ -143,17 +148,23 @@ namespace ApexArena.Gameplay
             if (!zoneMap.TryGetValue(ZoneType.Danger, out var dangerZone)) return;
 
             Collider[] playersInDanger = Physics.OverlapSphere(
-                dangerZone.transform.position, 
-                dangerZone.CurrentRadius, 
+                dangerZone.transform.position,
+                dangerZone.CurrentRadius,
                 LayerMask.GetMask("Player")
             );
+
+            radiationDamageAccumulator += radiationDamagePerSecond * Time.deltaTime;
+            int damage = Mathf.FloorToInt(radiationDamageAccumulator);
+            if (damage <= 0) return;
+
+            radiationDamageAccumulator -= damage;
 
             foreach (var col in playersInDanger)
             {
                 var player = col.GetComponent<PlayerController>();
                 if (player != null && player.IsAlive)
                 {
-                    player.TakeDamage(Mathf.RoundToInt(radiationDamagePerSecond * Time.deltaTime), DamageType.Radiation);
+                    player.TakeDamage(damage, DamageType.Radiation);
                 }
             }
         }
